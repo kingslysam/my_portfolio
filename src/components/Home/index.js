@@ -1,12 +1,13 @@
 import LogoTitle from '../../assets/images/logo-s.png';
 import { Link } from "react-router-dom";
 import './index.scss';
-import { useEffect, useState } from "react";
+import {useState} from "react";
 import AnimatedLetters from "../AnimatedLetters";
 import Logo from "./Logo";
+import Loader from "react-loaders";
 
 const Home = () => {
-  const [letterClass, setLetterClass] = useState("text-animate")
+  const [letterClass] = useState("text-animate")
   const nameArray = ['a','m','u','e','l',' ','K','i','l','l','a','g','a','n','e']
   const jobArray = [
     'w',
@@ -52,6 +53,7 @@ const Home = () => {
       </div>
       <Logo/>
     </div>
+      <Loader type="pacman" />
       </>
   );
 

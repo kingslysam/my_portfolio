@@ -2,13 +2,20 @@ import './index.scss'
 import AnimatedLetters from "../AnimatedLetters";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHtml5, faJava, faJsSquare, faPython, faReact } from "@fortawesome/free-brands-svg-icons";
+import { faDatabase } from "@fortawesome/free-solid-svg-icons";
+import Loader from "react-loaders";
+import { useState } from "react";
 
 const About = () => {
+  const [letterClass] = useState("text-animate")
   return(
+
+    <>
     <div className="container about-page">
       <div className="text-zone">
         <h1>
           <AnimatedLetters
+            letterClass={letterClass}
            strArray={['A','b','o','u','t',' ','m','e','.']}
            idx={15}
            />
@@ -22,6 +29,7 @@ const About = () => {
           My boundless energy enables me to pursue a wide range of interests, pastimes, academic specialties, and creative pursuits.
           I can learn new things quickly, take up new skills, and manage several projects and roles rather well.
         </p>
+        <a type="button" className="flat-button" value="RESUME" href="https://docs.google.com/document/d/1kpK3k3pKZZelGDScMd_eq7RBukb9Ais0bmXjgdnUCn8/edit?usp=sharing">RESUME</a>
       </div>
 
       <div className="stage-cube-cont">
@@ -41,10 +49,14 @@ const About = () => {
           <div className="face5">
             <FontAwesomeIcon icon={faPython} color="#F1FF33"/>
           </div>
+          <div className="face6">
+            <FontAwesomeIcon icon={faDatabase} color="#636C61"/>
+          </div>
         </div>
       </div >
     </div>
-
+      <Loader type="pacman"/>
+    </>
   )
 }
 
